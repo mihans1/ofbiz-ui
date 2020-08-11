@@ -26,5 +26,13 @@
   {
     "name": "cms",
     "url": ""
+  },
+  {
+    "name": "hr",
+    "url": "hr"
+  },
+  {
+    "name": "ecom",
+    "url": "ecom"
   }
 ]
