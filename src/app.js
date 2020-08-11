@@ -81,6 +81,18 @@ export class App {
         name: 'crm',
         title: 'Customer Relations'
       },
+      {
+        route: 'hr',
+        moduleId: PLATFORM.moduleName('hr/view/hr'),
+        name: 'hr',
+        title: 'Human Resources management'
+      },
+      {
+        route: 'ecom',
+        moduleId: PLATFORM.moduleName('hr/view/hr'),
+        name: 'ecom',
+        title: 'ECOM'
+      }
     ]);
     this.router = router;
   }
