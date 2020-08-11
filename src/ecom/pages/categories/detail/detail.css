@@ -1,0 +1,49 @@
+.top {
+  box-sizing: inherit;
+  display: block;
+}
+
+.border {
+  border-radius: 5px !important;
+  border-color: #EAEAEA !important;
+}
+
+.main-body {
+  background-color: white;
+}
+
+.tab {
+  display: flex;
+  overflow: hidden;
+  min-height: 48px;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.table-head {
+  padding-left: 24px;
+  border-bottom: 1px solid #EAEAEA;
+  display: flex;
+  overflow: hidden;
+  min-height: 48px;
+  box-sizing: inherit;
+  color: #3D3D3D;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.back a {
+  text-align: center;
+  font-size: 25px;
+  color:black;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: .3s all ease;
+}
+
+.back a:hover {
+  color: grey;
+}
+
+

@@ -1,0 +1,14 @@
+<template>
+  <require from="bootstrap/dist/css/bootstrap.css"></require>
+  <require from="bootstrap-select/dist/css/bootstrap-select.min.css"></require>
+  <require from="./component/sidebar/sidebar"></require>
+  <require from="./main.css"></require>
+
+
+  <div class="wrapper d-flex align-items-stretch">
+    <sidebar></sidebar>
+    <div id="content" class="p-4 p-md-5">
+      <router-view></router-view>
+    </div>
+  </div>
+</template>

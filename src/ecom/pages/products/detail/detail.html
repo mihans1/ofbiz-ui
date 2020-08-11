@@ -1,0 +1,277 @@
+<template>
+  <require from="./detail.css"></require>
+
+
+  <div if.bind="product" class="row justify-content-center">
+    <div class="col row justify-content-center fixed">
+      <!-- BACK BUTTON -->
+      <div class="col-10 row head justify-content-between back">
+        <div class="col-12 m-0 p-0 pb-4">
+          <a href="/products">
+            <img src="/back-arrow.png">
+            <span>Products</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCT -->
+      <div class="col-10 row head justify-content-between">
+        <div class="col-10 m-0 p-0 pb-3">
+          <h3>${ product.productName}</h3>
+        </div>
+        <div class="col-1">
+          <div if.bind="!isEditingMode" click.delegate="isEditingMode = true" class="col-2">
+            <button class=" btn btn-dark float-right">EDIT</button>
+          </div>
+          <div if.bind="isEditingMode" click.delegate="updateData()" class="col-2">
+            <button class=" btn btn-success float-right">SAVE</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-10">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-12 col-sm-12">
+            <div class="col-12 row border main-body mb-5">
+              <div class="col-12 row tab">
+                <div class="col-10"><h3 class="bold">General Informations</h3></div>
+              </div>
+              <div class="col-12 row tab">
+
+                <div class="col-6 row">
+                  <div class="col  pb-2 "><h5 class="bold">Name</h5></div>
+
+                  <div class="col-12 mt-1">
+                    <input if.bind="isEditingMode" type="text" value.bind="product.productName" class="form-control"
+                           placeholder="First Name">
+                    <span if.bind="!isEditingMode" class="">${product.productName}</span>
+                  </div>
+                </div>
+
+
+                <!--<div class="col-6 row">
+                  <div class="col-12  pb-2 bold"><h5 class="bold">Facility ID</h5></div>
+
+                  <div class="col-12">
+                    <input if.bind="isEditingMode" type="text" value.bind="product.facilityId" class="form-control" placeholder="Facility id">
+                    <span if.bind="!isEditingMode" class="">${product.facilityId}</span>
+
+                  </div>
+                </div>-->
+              </div>
+              <div class="col-12 row tab">
+
+                <div class="col-12 row">
+                  <div class="col-12  pb-2 "><h5 class="bold">Description</h5></div>
+
+                  <div class="col-12">
+                  <textarea if.bind="isEditingMode" type="text" value.bind="product.description" class="form-control"
+                            placeholder="Last Name" rows="4"></textarea>
+                    <p if.bind="!isEditingMode" class="">${product.description}</p>
+
+                  </div>
+                  <div class="col-12  pb-2 "><h5 class="bold">Long Description</h5></div>
+                  <div class="col-12">
+                  <textarea if.bind="isEditingMode" type="text" value.bind="product.longDescription"
+                            class="form-control"
+                            placeholder="Last Name" rows="12"></textarea>
+                    <p if.bind="!isEditingMode" class="">${product.longDescription}</p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 row tab">
+
+                <div class="col-6 row">
+                  <div class="col-12  pb-2 "><h5 class="bold">Price without tax</h5></div>
+
+                  <div class="col-12">
+                    <input if.bind="isEditingMode" type="text" value.bind="productPrice.price" class="form-control"
+                           placeholder="Last Name">
+                    <span if.bind="!isEditingMode" class="">${getPriceWithoutTaxString(product)}</span>
+
+                  </div>
+                </div>
+
+                <div class="col-6 row">
+                  <div class="col-12  pb-2 "><h5 class="bold">Price with tax</h5></div>
+
+                  <div class="col-12">
+                    <!--<input if.bind="isEditingMode" type="text" value.bind="product._toMany_ProductPrice[0].priceWithTax ? product._toMany_ProductPrice[0].priceWithTax : 0" class="form-control" placeholder="Last Name" >-->
+                    <span if.bind="!isEditingMode" class="">${getPriceWithTaxString(product)}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 row border main-body mb-5">
+              <div class="col-12 tab">
+                <div class=""><h3 class="bold">Shipping Informations</h3></div>
+              </div>
+              <div class="col-12 row tab">
+                <div class="col-6 row">
+                  <div class="col-12 p-3 bold"><h5 class="bold">Width (m)</h5></div>
+
+                  <div class="col-12">
+                    <input if.bind="isEditingMode" type="text" value.bind="product.shippingWidth" class="form-control"
+                           placeholder="0">
+                    <span if.bind="!isEditingMode" class="">${product.shippingWidth ? product.shippingWidth : 0}</span>
+                  </div>
+                </div>
+
+                <div class="col-6 row">
+                  <div class="col-12 p-3 bold"><h5 class="bold">Height (m)</h5></div>
+
+                  <div class="col-12">
+                    <input if.bind="isEditingMode" type="text" value.bind="product.shippingHeight" class="form-control"
+                           placeholder="0">
+                    <span if.bind="!isEditingMode"
+                          class="">${product.shippingHeight ? product.shippingHeight : 0}</span>
+                  </div>
+                </div>
+
+                <div class="col-6 row">
+                  <div class="col-12 p-3 bold"><h5 class="bold">Weight (kg)</h5></div>
+
+                  <div class="col-12">
+                    <input if.bind="isEditingMode" type="text" value.bind="product.shippingWeight" class="form-control"
+                           placeholder="0">
+                    <span if.bind="!isEditingMode"
+                          class="">${product.shippingWeight ? product.shippingWeight : 0}</span>
+                  </div>
+                </div>
+
+                <div class="col-6 row">
+                  <div class="col-12 p-3 bold"><h5 class="bold">Depth (m)</h5></div>
+
+                  <div class="col-12">
+                    <input if.bind="isEditingMode" type="text" value.bind="product.shippingDepth" class="form-control"
+                           placeholder="0">
+                    <span if.bind="!isEditingMode" class="">${product.shippingDepth ? product.shippingDepth : 0}</span>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12 col-sm-12">
+            <div class="col-12 row border main-body mb-5">
+              <div class="col-12 tab">
+                <div><h3>Organize Product</h3></div>
+              </div>
+
+              <div class="col-12 row tab">
+
+                <div class="col-12 row">
+                  <div class="col  pb-2 "><h5 class="bold">Product type</h5></div>
+
+                  <div class="col-12 mt-1">
+                    <abp-select if.bind="isEditingMode"
+                                picker-options.bind="pickerOptions"
+                                data-mapping-structure.bind="typeMappings"
+                                selected-value.bind="product.productTypeId"
+                                collection.bind="types"
+                                object-key="productTypeId">
+                    </abp-select>
+                    <span if.bind="!isEditingMode" class="">${product._toOne_ProductType.description}</span>
+                  </div>
+                </div>
+
+                <div class="col-12  pb-2 bold"><h5 class="bold">Primary Category</h5></div>
+
+                <div class="col-12">
+                  <abp-select if.bind="isEditingMode"
+                              picker-options.bind="pickerOptions"
+                              data-mapping-structure.bind="categoryMappings"
+                              selected-value.bind="product.primaryProductCategoryId"
+                              collection.bind="categories"
+                              object-key="productCategoryId">
+                  </abp-select>
+                  <span if.bind="!isEditingMode" class="">${product._toOne_PrimaryProductCategory.categoryName}</span>
+
+                </div>
+
+                <div class="col-12 row">
+                  <div class="col-12  pb-2 bold"><h5 class="bold">Sub-Categories</h5></div>
+
+                  <div class="col-12">
+                    <abp-select if.bind="isEditingMode"
+                                picker-options.bind="pickerOptions"
+                                data-mapping-structure.bind="categoryMappings"
+                                selected-item.bind="selectedSubCategories"
+                                collection.bind="categories"
+                                multiple="true"
+                                object-key="productCategoryId">
+                    </abp-select>
+
+
+                    <ul if.bind="!isEditingMode" class="">
+                      <li repeat.for="subCat of product._toMany_ProductCategoryMember">
+                        <span>${subCat._toOne_ProductCategory.categoryName}</span>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+
+                <div class="col-12 row">
+                  <div class="col-12  pb-2 bold"><h5 class="bold">Keywords</h5></div>
+                  <div class="col-12  pb-2">
+                    <label class="keyword" repeat.for="kw of product._toMany_ProductKeyword"
+                           click.delegate="onRemoveKeyword(kw)">${ kw.keyword }</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+
+  <!--
+  <div if.bind="product" class="is-size-5-desktop has-margin-50 has-padding-10">
+
+    <div class="has-text-right">
+      <a class="button has-background-primary has-text-white has-margin-10 has-padding-10" href="/products">Back</a>
+    </div>
+    <div class="has-background-light">
+      <h1 class="is-size-2 has-padding-10"> ${ product.productName} </h1>
+      <span>Category: ${ getCategoryInfo(product) }</span>
+    </div>
+    <div class="has-background-grey-light">
+      <p>Description: ${product.description ? product.description : 'none'} </p>
+    </div>
+    <div class="has-background-light is-size-6">
+      <p>${getPriceWithoutTaxString(product)}</p>
+      <p>${getPriceWithTaxString(product)}</p>
+    </div>
+    <div class="has-background-grey-light">
+      <p>Brand name: ${product.brandName ? product.brandName : 'none'}</p>
+    </div>
+    <div class="has-background-light is-size-6">
+      <p>Created at: ${product.createdStamp}</p>
+    </div>
+    <div class="has-background-grey-light">
+      <p>Shipping dimensions:</p>
+    </div>
+    <div class="has-background-light is-size-6 has-text-right has-padding-right-25">
+      <p>Weight: ${product.shippingWeight ? product.shippingWeight : 0}kg</p>
+      <p>Height: ${product.shippingHeight ? product.shippingHeight : 0}m</p>
+      <p>Width: ${product.shippingWidth ? product.shippingWidth : 0}m</p>
+      <p>Depth: ${product.shippingDepth ? product.shippingDepth : 0}m</p>
+    </div>
+  </div>
+  -->
+</template>

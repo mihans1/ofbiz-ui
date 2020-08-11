@@ -1,0 +1,41 @@
+import {Model} from "./model";
+
+export class OrderContact extends Model{
+  faUsername?: any;
+  orderId: string;
+  tnAreaCode?: any;
+  tnContactNumber?: any;
+  paCountryGeoId: string;
+  _ENTITY_NAME_: string;
+  contactMechTypeId: string;
+  paAddress2?: any;
+  paAddress1: string;
+  faFtpPassword?: any;
+  faBinaryTransfer?: any;
+  contactMechId: string;
+  paStateProvinceGeoId: string;
+  infoString?: any;
+  paHouseNumber?: any;
+  faDefaultTimeout?: any;
+  faPort?: any;
+  paAttnName: string;
+  tnCountryCode?: any;
+  tnAskForName?: any;
+  _DELEGATOR_NAME_: string;
+  faPassiveMode?: any;
+  paPostalCodeGeoId?: any;
+  faHostname?: any;
+  paMunicipalityGeoId?: any;
+  paCity: string;
+  faFilePath?: any;
+  paToName: string;
+  paCountyGeoId?: any;
+  paGeoPointId: string;
+  contactMechPurposeTypeId: string;
+  paPostalCodeExt?: any;
+  paDirections?: any;
+  paPostalCode: string;
+  paCityGeoId?: any;
+  paHouseNumberExt?: any;
+  faZipFile?: any;
+}

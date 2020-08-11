@@ -1,0 +1,41 @@
+import {Model} from "./model";
+
+export class Person extends Model {
+  yearsWithEmployer?: any;
+  lastName: string;
+  occupation?: any;
+  gender?: any;
+  employmentStatusEnumId?: any;
+  socialSecurityNumber?: any;
+  createdStamp: any;
+  suffix?: any;
+  mothersMaidenName?: any;
+  middleNameLocal?: any;
+  existingCustomer?: any;
+  residenceStatusEnumId?: any;
+  maritalStatusEnumId?: any;
+  oldMaritalStatus?: any;
+  nickname?: any;
+  partyId: string;
+  memberId?: any;
+  height?: any;
+  passportNumber?: any;
+  lastUpdatedStamp: any;
+  lastNameLocal?: any;
+  comments?: any;
+  monthsWithEmployer?: any;
+  createdTxStamp: any;
+  weight?: any;
+  lastUpdatedTxStamp: any;
+  birthDate?: any;
+  otherLocal?: any;
+  firstName: string;
+  cardId?: any;
+  middleName: string;
+  firstNameLocal?: any;
+  passportExpireDate?: any;
+  salutation?: any;
+  personalTitle: string;
+  deceasedDate?: any;
+  totalYearsWorkExperience?: any;
+}
