@@ -10,7 +10,7 @@ npm install -g aurelia-cli
 npm install
 ```
 
-## Run dev app
+## Run dev ecom
 _Allows hot reload_
 ```bash
 # --< In backend repo >--
@@ -23,7 +23,7 @@ _Allows hot reload_
 
 # --< In frontend repo (here) >--
 
-# Start aurelia app
+# Start aurelia ecom
 au run
 
 # Start proxy
@@ -32,12 +32,12 @@ docker-compose -f docker-compose-dev.yml up [--build]
 ```
 
 ## Run fully in docker
-_Only exposes port 80 to public, uses nginx to serve front  
+_Only exposes port 80 to public, uses nginx to serve front
 _Don't use this for now_
 ```bash
 # --< In backend repo >--
 
-# Start ofbiz in docker  
+# Start ofbiz in docker
 ./deploy-dev.sh
 
 # --< In frontend repo (here) >--

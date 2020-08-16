@@ -9,6 +9,12 @@ import '@progress/kendo-ui/css/web/kendo.common.min.css';
 import '@progress/kendo-ui/css/web/kendo.bootstrap.min.css';
 import { initialState } from './store/store';
 import '@vaadin/vaadin';
+import 'bulma-helpers/css/bulma-helpers.min.css';
+import 'smart-webcomponents-community/source/styles/smart.default.css';
+import 'bulma/css/bulma.min.css';
+import 'bootstrap-select/dist/css/bootstrap-select.min.css';
+import 'aurelia-bootstrap-select/dist/amd/bootstrap-select-bs4.css';
+
 
 export function configure(aurelia) {
   aurelia.use
@@ -25,6 +31,7 @@ export function configure(aurelia) {
     .plugin(PLATFORM.moduleName('bcx-aurelia-reorderable-repeat'))
     .plugin(PLATFORM.moduleName('aurelia-kendoui-bridge'))
     .plugin(PLATFORM.moduleName('au-table'))
+    .plugin(PLATFORM.moduleName('aurelia-bootstrap-select'))
     .plugin(PLATFORM.moduleName('aurelia-cookie'));
 
   if (environment.testing) {

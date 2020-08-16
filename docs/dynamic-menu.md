@@ -7,14 +7,14 @@
     "url": "project",
     "title": "Projects"
   },
-```  
+```
 *url attribute represents the path to your main screen.*
 
 Set you fontawesome icon in `button-icon.js`.
 
-## Introduce child router to your module. In the parent router config `app.js` you simply link to a view model that is itself a router.
+## Introduce child router to your module. In the parent router config `ecom.js` you simply link to a view model that is itself a router.
 
-`app.js` (parent router):
+`ecom.js` (parent router):
 ```javascript
 {
     route: 'project',
@@ -37,15 +37,15 @@ const routes = {
       title: 'Projects'
     },
     {
-      route: 'new-task',
-      moduleId: PLATFORM.moduleName('project/task/components/task-edit'),
-      name: 'new-task',
+      route: 'new-orders',
+      moduleId: PLATFORM.moduleName('project/orders/components/orders-edit'),
+      name: 'new-orders',
       nav: true,
       title: 'My Tasks'
     },
     {
       route: 'project/:id',
-      moduleId: PLATFORM.moduleName('project/task/components/task-list'),
+      moduleId: PLATFORM.moduleName('project/orders/components/orders-list'),
       name: 'project-view'
     },
     {
@@ -76,9 +76,9 @@ const routes = {
     }]
 };
 ```
-Provide a title and set `nav: true` for routes, you want to be displayed in the navbar. 
+Provide a title and set `nav: true` for routes, you want to be displayed in the navbar.
 
-Inject the `NavigationService` in your child router component and get routes for your app e.g:
+Inject the `NavigationService` in your child router component and get routes for your ecom e.g:
 `project.js` (child router):
 ```javascript
 import { inject } from 'aurelia-dependency-injection';
@@ -102,7 +102,7 @@ export class ProjectMainComponent {
 ```
 The routes from the injected service will also be used in the navbar.
 
-This approach will also keep `app.js` clean from child routes as the app will grow larger.
+This approach will also keep `ecom.js` clean from child routes as the ecom will grow larger.
 
 
 

@@ -1,0 +1,24 @@
+<template>
+  <require from="../../commons/workspaces-menu/workspace-favourite"></require>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="float-left">Project Dashboard</h2>
+      <workspace-favourite class="float-left mx-2"></workspace-favourite>
+      <button
+        class="btn btn-primary float-left"
+        click.delegate="handleAddProject()"
+      >
+        <font-awesome-icon icon.bind="faPlus"></font-awesome-icon>
+        Create Project
+      </button>
+    </div>
+    <div class="card-body">
+      <vaadin-grid theme="compact row-stripes" column-reordering-allowed height-by-rows>
+        <vaadin-grid-column path="projectId" header="Project ID"></vaadin-grid-column>
+        <vaadin-grid-column path="projectName" header="Project Name"></vaadin-grid-column>
+        <vaadin-grid-column path="currentStatusId" header="Current Status"></vaadin-grid-column>
+      </vaadin-grid>
+    </div>
+  </div>
+</template>

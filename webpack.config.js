@@ -64,15 +64,15 @@ module.exports = ({production} = {}, {extractCss, analyze, tests, hmr, port, hos
       cacheGroups: {
         default: false, // Disable the built-in groups default & vendors (vendors is redefined below)
         // You can insert additional cacheGroup entries here if you want to split out specific modules
-        // This is required in order to split out vendor css from the app css when using --extractCss
+        // This is required in order to split out vendor css from the ecom css when using --extractCss
         // For example to separate font-awesome and bootstrap:
-        // fontawesome: { // separates font-awesome css from the app css (font-awesome is only css/fonts)
+        // fontawesome: { // separates font-awesome css from the ecom css (font-awesome is only css/fonts)
         //   name: 'vendor.font-awesome',
         //   test:  /[\\/]node_modules[\\/]font-awesome[\\/]/,
         //   priority: 100,
         //   enforce: true
         // },
-        // bootstrap: { // separates bootstrap js from vendors and also bootstrap css from app css
+        // bootstrap: { // separates bootstrap js from vendors and also bootstrap css from ecom css
         //   name: 'vendor.font-awesome',
         //   test:  /[\\/]node_modules[\\/]bootstrap[\\/]/,
         //   priority: 90,

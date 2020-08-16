@@ -8,7 +8,7 @@ describe('Stage App Component', () => {
   beforeEach(() => {
     component = StageComponent
       .withResources(PLATFORM.moduleName('app'))
-      .inView('<app></app>');
+      .inView('<ecom></ecom>');
   });
 
   afterEach(() => component.dispose());

@@ -12,7 +12,7 @@ export default class TaskGenerator {
   async execute() {
     const name = await this.ui.ensureAnswer(
       this.options.args[0],
-      'What would you like to call the task?'
+      'What would you like to call the orders?'
     );
 
     let fileName = this.project.makeFileName(name);

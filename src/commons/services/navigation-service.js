@@ -93,6 +93,30 @@ const routes = {
     }
   ],
 
+  ecom: [
+    {route: '', redirect: 'ecom'},
+    {
+      route: '',
+      moduleId: PLATFORM.moduleName('ecom/components/ecom-list'),
+      name: 'orders',
+      nav: true,
+      title: 'Orders'
+    },
+    {
+      route: 'customers',
+      moduleId: PLATFORM.moduleName('ecom/orders/components/order-list'),
+      name: 'customers',
+      nav: true,
+      title: 'Customers'
+    },
+    {
+      route: 'catalog',
+      moduleId: PLATFORM.moduleName('ecom/orders/components/order-detail'),
+      name: 'catalog',
+      nav: true,
+      title: 'Catalog'
+    }
+  ],
   sfa: [
     { route: '', redirect: 'opportunities' },
 

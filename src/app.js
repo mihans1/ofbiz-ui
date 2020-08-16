@@ -82,14 +82,8 @@ export class App {
         title: 'Customer Relations'
       },
       {
-        route: 'hr',
-        moduleId: PLATFORM.moduleName('hr/view/hr'),
-        name: 'hr',
-        title: 'Human Resources management'
-      },
-      {
         route: 'ecom',
-        moduleId: PLATFORM.moduleName('hr/view/hr'),
+        moduleId: PLATFORM.moduleName('ecom/ecom'),
         name: 'ecom',
         title: 'ECOM'
       }
