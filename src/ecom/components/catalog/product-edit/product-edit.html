@@ -1,0 +1,17 @@
+<template>
+  <div class="container mt-4">
+    <h4>Edit quote</h4>
+    <hr />
+    <h3>${quote.quoteId}</h3>
+    <form role="form" id="productForm">
+      <div class="form-group">
+        <label for="product-name" class="col-form-label">Name</label>
+        <input type="text" class="form-control" id="productName" value.bind="product.productName">
+      </div>
+      <div class="modal-footer">
+        <a style="cursor: pointer" click.delegate="back()">Back to List</a>
+        <button class="btn btn-primary" click.delegate="editProduct()" type="submit">Save changes</button>
+      </div>
+    </form>
+  </div>
+</template>

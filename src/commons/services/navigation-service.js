@@ -96,6 +96,13 @@ const routes = {
   ecom: [
     {route: '', redirect: 'ecom'},
     {
+      route: 'catalog',
+      moduleId: PLATFORM.moduleName('ecom/view/catalog/catalog'),
+      name: 'catalog',
+      nav: true,
+      title: 'Catalog'
+    },
+    {
       route: '',
       moduleId: PLATFORM.moduleName('ecom/view/orders/orders'),
       name: 'orders',
@@ -108,13 +115,6 @@ const routes = {
       name: 'customers',
       nav: true,
       title: 'Customers'
-    },
-    {
-      route: 'catalog',
-      moduleId: PLATFORM.moduleName('ecom/view/catalog/catalog'),
-      name: 'catalog',
-      nav: true,
-      title: 'Catalog'
     }
   ],
   sfa: [

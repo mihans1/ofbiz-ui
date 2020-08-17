@@ -9,7 +9,7 @@ export class catalog {
       { route: '', redirect: 'listview' },
       { route: 'listview', moduleId: PLATFORM.moduleName('ecom/components/catalog/listview/listview'), name: 'listview' },
       { route: 'cardview', moduleId: PLATFORM.moduleName('ecom/components/catalog/cardview/cardview'), name: 'cardview' },
-      { route: 'quote-edit', moduleId: PLATFORM.moduleName('ecom/components/catalog/quote-edit/quote-edit'), name: 'quote-edit' },
+      { route: 'product-edit', moduleId: PLATFORM.moduleName('ecom/components/catalog/product-edit/product-edit'), name: 'product-edit' },
     ]);
     this.router = router;
   }
