@@ -59,6 +59,12 @@ export class App {
         title: 'Salesforce Automation'
       },
       {
+        route: 'ecom',
+        moduleId: PLATFORM.moduleName('ecom/ecom'),
+        name: 'ecom',
+        title: 'ECOM'
+      },
+      {
         route: 'project',
         moduleId: PLATFORM.moduleName('project/project'),
         name: 'project',
@@ -81,12 +87,6 @@ export class App {
         name: 'crm',
         title: 'Customer Relations'
       },
-      {
-        route: 'ecom',
-        moduleId: PLATFORM.moduleName('ecom/ecom'),
-        name: 'ecom',
-        title: 'ECOM'
-      }
     ]);
     this.router = router;
   }

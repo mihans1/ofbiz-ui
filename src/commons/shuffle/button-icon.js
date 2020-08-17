@@ -2,7 +2,6 @@ import { customElement, bindable } from 'aurelia-framework';
 import {
   faCalendarAlt,
   faPoll,
-  faChartBar,
   faFileInvoice,
   faMagic,
   faUsers,
@@ -55,9 +54,6 @@ export class ButtonIcon {
       break;
     case 'object dist':
       this.faIcon = faNetworkWired;
-      break;
-    case 'ecom':
-      this.faIcon = faChartBar;
       break;
     default:
       this.faIcon = faFileInvoice;
