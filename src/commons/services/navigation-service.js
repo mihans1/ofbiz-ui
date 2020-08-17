@@ -97,10 +97,10 @@ const routes = {
     { route: '', redirect: 'catalog' },
 
     {
-      route: 'catalog',
-      moduleId: PLATFORM.moduleName('ecom/view/catalog/catalog'),
-      name: 'catalog',
-      title: 'Catalog',
+      route: 'product',
+      moduleId: PLATFORM.moduleName('ecom/view/product/product'),
+      name: 'product',
+      title: 'Product',
       nav: true
     },
     {
