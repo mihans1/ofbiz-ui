@@ -55,6 +55,9 @@ export class ButtonIcon {
     case 'object dist':
       this.faIcon = faNetworkWired;
       break;
+    case 'ecom':
+      this.faIcon = faFileInvoice;
+      break;
     default:
       this.faIcon = faFileInvoice;
     }
