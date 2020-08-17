@@ -1,0 +1,29 @@
+<template>
+  <div class="row mt-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price without tax</th>
+          <th scope="col">Price with tax</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr repeat.for="product of store.products">
+          <td>${product.productName}</td>
+          <td>${product.description}</td>
+          <td>${product.category}</td>
+          <td>${product.price}</td>
+          <td>
+            <a style="text-decoration: none" route-href="route: quote-edit; params.bind: { quote: quote}">Edit</a> |
+            <a style="color: #007bff; cursor: pointer" click.trigger="deleteQuote(quote.quoteId, $index)">Delete</a>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>

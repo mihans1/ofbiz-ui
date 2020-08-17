@@ -97,21 +97,21 @@ const routes = {
     {route: '', redirect: 'ecom'},
     {
       route: '',
-      moduleId: PLATFORM.moduleName('ecom/components/ecom-list'),
+      moduleId: PLATFORM.moduleName('ecom/view/orders/orders'),
       name: 'orders',
       nav: true,
       title: 'Orders'
     },
     {
       route: 'customers',
-      moduleId: PLATFORM.moduleName('ecom/orders/components/order-list'),
+      moduleId: PLATFORM.moduleName('ecom/view/customers/customers'),
       name: 'customers',
       nav: true,
       title: 'Customers'
     },
     {
       route: 'catalog',
-      moduleId: PLATFORM.moduleName('ecom/orders/components/order-detail'),
+      moduleId: PLATFORM.moduleName('ecom/view/catalog/catalog'),
       name: 'catalog',
       nav: true,
       title: 'Catalog'

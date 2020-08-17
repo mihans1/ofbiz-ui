@@ -2,7 +2,8 @@ import { inject } from 'aurelia-dependency-injection';
 import { NavigationService } from '../commons/services/navigation-service';
 
 @inject(NavigationService)
-export class ecomMainComponent {
+export class Ecom {
+
   constructor(navigationService) {
     this.navigationService = navigationService;
     this.navigationService
