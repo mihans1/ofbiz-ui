@@ -19,8 +19,8 @@ export class ListView {
         data => this.store.productsCopy = data,
       );
   }
-  deleteProductbyID(id, index) {
+  deleteProduct(id, index) {
     this.store.products.splice(index, 1);
-    this.productService.deleteQuoteById(id);
+    this.productService.deleteProductById(id);
   }
 }

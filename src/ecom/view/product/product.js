@@ -2,7 +2,7 @@ import { PLATFORM } from 'aurelia-pal';
 
 export class product {
   configureRouter(config, router) {
-    config.title = 'Catalog';
+    config.title = 'Product';
     config.options.pushState = true;
     // config.options.root = '/';
     config.map([

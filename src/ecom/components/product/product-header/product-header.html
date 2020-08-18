@@ -3,12 +3,12 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between col-12">
     <span class="navbar-brand mb-0 h1">Products</span>
     <workspace-favourite class="float-left mx-2"></workspace-favourite>
-    <button type="button" class="btn btn-outline-dark" data-toggle="modal" href="#quoteModal">
+    <button type="button" class="btn btn-outline-dark" data-toggle="modal" href="#productModal">
       <img src="../../../assets/img/add.svg" alt="">
       New product
     </button>
     <div class="form-inline col-6">
-      <input class="form-control" type="search" placeholder="Search Quotes..." aria-label="Search" style="width:100%" value.bind="searchInput" change.delegate="search()">
+      <input class="form-control" type="search" placeholder="Search Products..." aria-label="Search" style="width:100%" value.bind="searchInput" change.delegate="search()">
     </div>
       <button type="button" class="btn btn-outline-dark">
         Product Filter
@@ -20,37 +20,35 @@
   </nav>
   <div class="col-12">
     <div class="dropdown float-right">
-      <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog"
-        aria-labelledby="quoteModalLabel" aria-hidden="true">
+      <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
+           aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="quoteModalLabel">New quote</h5>
+              <h5 class="modal-title" id="productModalLabel">New product</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <!-- form fields need to be changed! -->
-              <form role="form" id="quoteForm" submit.delegate="newQuote()">
+              <form role="form" id="productForm" submit.delegate="newProduct()">
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Name</label>
-                  <input type="text" class="form-control" id="quoteName" value.bind="quote.quoteName">
+                  <label for="product-name" class="col-form-label">Name</label>
+                  <input type="text" class="form-control" id="produductName" value.bind="product.productName">
                 </div>
                 <div class="form-group">
-                  <label for="message-text" class="col-form-label">Party</label>
-                  <select class="form-control" value.bind="quote.partyId">
-                    <option>empty</option>
-                    <option repeat.for="party of parties._value"
-                            model.bind="party.partyId">
-                      ${party.partyId}
-                    </option>
-                  </select>
+                  <label for="product-description" class="col-form-label">Description</label>
+                  <input type="text" class="form-control" id="description" value.bind="product.description">
                 </div>
+                <div class="form-group">
+                <label for="product-category" class="col-form-label">Category</label>
+                <input type="text" class="form-control" id="category" value.bind="product.category">
+              </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" click.delegate="newQuote()"
-                    data-dismiss="modal">Save changes</button>
+                  <button type="button" class="btn btn-primary" click.delegate="newProduct()"
+                    data-dismiss="modal">Save product</button>
                 </div>
               </form>
             </div>
