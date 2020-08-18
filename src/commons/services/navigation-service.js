@@ -94,7 +94,7 @@ const routes = {
   ],
 
   ecom: [
-    { route: '', redirect: 'catalog' },
+    { route: '', redirect: 'product' },
 
     {
       route: 'product',
