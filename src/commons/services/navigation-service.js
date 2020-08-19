@@ -180,7 +180,7 @@ const routes = {
       name: 'orders',
       title: 'Orders',
       nav: true
-    }
+    },
   ],
   cms: [], // TODO: add cms child routes here
   marketdata: [], // TODO: add marketdata child routes here
