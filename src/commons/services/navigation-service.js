@@ -117,7 +117,7 @@ const routes = {
       title: 'Orders',
       name: 'orders'
     }
-],
+  ],
   sfa: [
     { route: '', redirect: 'opportunities' },
 
@@ -148,7 +148,7 @@ const routes = {
       nav: true,
       title: 'Orders',
       name: 'orders'
-    },
+    }
   ],
   crm: [
     { route: '', redirect: 'complex' },
@@ -180,7 +180,7 @@ const routes = {
       name: 'orders',
       title: 'Orders',
       nav: true
-    },
+    }
   ],
   cms: [], // TODO: add cms child routes here
   marketdata: [], // TODO: add marketdata child routes here
