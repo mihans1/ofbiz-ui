@@ -8,6 +8,14 @@
         <label for="product-name" class="col-form-label">Name</label>
         <input type="text" class="form-control" id="productName" value.bind="product.productName">
       </div>
+      <div class="form-group">
+        <label for="product-description" class="col-form-label">Description</label>
+        <input type="text" class="form-control" id="description" value.bind="product.description">
+      </div>
+      <div class="form-group">
+        <label for="product-category" class="col-form-label">Category</label>
+        <input type="text" class="form-control" id="category" value.bind="product.category">
+      </div>
       <div class="modal-footer">
         <a style="cursor: pointer" click.delegate="back()">Back to List</a>
         <button class="btn btn-primary" click.delegate="editProduct()" type="submit">Save changes</button>

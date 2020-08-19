@@ -21,6 +21,6 @@ export class CardView {
   }
     deleteProduct(id, index) {
       this.store.products.splice(index, 1);
-      this.productService.deleteProductByID(id);
+      this.productService.deleteProductById(id);
     }
 }

@@ -9,7 +9,6 @@ export class ProductHeader {
     this.ea = ea;
     this.productService = productService;
     this.store = store;
-    this.products = this.productService.get("Product");
   }
 
   newProduct() {

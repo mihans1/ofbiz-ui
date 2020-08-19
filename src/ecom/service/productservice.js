@@ -19,11 +19,11 @@ export class Productservice {
       });
   }
 
-  createNewProduct(product) {
+  createNewProduct(quote) {
     this.client
       .fetch(`${this.baseUrl}services/createProduct`, {
         method: 'post',
-        body: json(product)
+        body: json(quote)
       })
       .catch(reason => {
         // do something useful here
